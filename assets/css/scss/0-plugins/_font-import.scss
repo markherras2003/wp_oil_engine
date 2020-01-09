@@ -1,0 +1,10 @@
+//Fonts Karla and Butler
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../../assets/font/Butler-Bold.woff2') format('woff2'),
+        url('../../assets/font/Butler-Bold.woff') format('woff');
+    font-weight: 700;
+}
