@@ -1,0 +1,18 @@
+/* 
+    Set default global styles for button elements:
+    <button></button>, input[type="submit"], btn btn-submit
+*/
+
+.button {
+        display: inline-block;
+        height: 53px;
+        width: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #C39900;
+        padding: 16px 20px;
+        color: getColor(white);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+}

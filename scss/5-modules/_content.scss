@@ -1,0 +1,64 @@
+.content {
+    display: flex;
+//    flex-wrap: wrap;
+
+    &:not(:last-child){
+        margin-bottom: 95px;
+    }
+
+    .content-text {
+        width: 50%;
+
+        p {
+            width: 365px;
+        }
+
+        .clog {
+            margin-top: 25px;
+            margin-bottom: 36px;
+
+            li {
+                list-style: none;
+                display: flex;
+                line-height: 22px;
+                color: getColor(dark);
+                font-weight: 700;
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+
+                &::before {
+                    content: url('../../assets/Bullet\ point\ cog.svg');
+                    width: 21px;
+                    height: 21px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    .img-wrapper {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        background-image: url('../../assets/Image\ Cog.png');
+        height: 656px;
+        width: 595px;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        img {
+            height: 650px;
+            width: 441px;
+        }
+    }
+
+    &.left-image {
+        flex-direction: row-reverse;
+
+        .content-text{
+            margin-left: 170px;
+        }
+    }
+}
