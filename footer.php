@@ -2,37 +2,97 @@
     <footer>
         <section class="container  footer-top">
             <div class="left-info">
-                <h2>Start your journey to better business – get in touch today.</h2>
+            <?php
+                if( get_theme_mod('ju_footer_lead_text') ) {
+                    ?>
+                    <h2><?= get_theme_mod('ju_footer_lead_text') ?></h2>
+                    <?php
+                }else {
+                    ?>
+                    <h2>Start your journey to better business – get in touch today.</h2>
+                    <?php
+                }
+            ?>
                 <div class="contact-info">
+                <?php
+                if( get_theme_mod('ju_footer_contact_link') ) {
+                    ?>
+                    <a class="button" href="<?= get_theme_mod('ju_footer_contact_link') ?>">Contact us</a>
+                    <?php
+                }else {
+                    ?>
                     <a class="button" href="">Contact us</a>
-                    <p>Or call <span>1800 573 281</span></p>
+                    <?php
+                }
+
+                ?>
+
+                <?php
+                
+                if( get_theme_mod('ju_footer_contact_number')) {
+                    ?>
+                        <p>Or call <span><?= get_theme_mod('ju_footer_contact_number') ?></span></p>
+                    <?php
+                }else {
+                    ?>
+                        <p>Or call <span>1800 573 281</span></p>
+                    <?php
+                }
+                
+                ?>
                 </div>
             </div>
             <div class="footer-menu">
                 <div class="nav-list">
                     <ul class="nav-items">
-                        <li class="active"><a href="">Home</a></li>
-                        <li><a href="">Professional Development</a></li>
-                        <li><a href="">Integrated Solutions</a></li>
-                        <li><a href="">Industry Insights</a></li>
-                        <li><a href="">CEDAR Feedback</a></li>
+                    <?php 
+                    
+                        if(has_nav_menu('secondary')){
+                            wp_nav_menu([
+                                'items_wrap'          => '%3$s',
+                                'theme_location'      => 'secondary',
+                                'container'           => false,
+                                'fallback_cb'         => false,
+                                'depth'               => 4,
+                            ]);
+                        }
+                    ?>   
                     </ul>
 
                     <ul class="nav-items">
-                        <li><a href="">About us</a></li>
-                        <li><a href="">Contact</a></li>
-
-                        <?php
-                        
-                        ?>
-                        <li><a href="">Members Area</a></li>
+                 <?php 
+                 
+                    if(has_nav_menu('company')){
+                        wp_nav_menu([
+                            'items_wrap'          => '%3$s',
+                            'theme_location'      => 'company',
+                            'container'           => false,
+                            'fallback_cb'         => false,
+                            'depth'               => 4,
+                        ]);
+                    }
+                 ?>       
                     </ul>
                 </div>
             </div>
 
         </section>
         <section class="footer-bottom container">
-            <p>© Oil in the Engine 2019</p>
+
+        <?php
+        
+            if( get_theme_mod('ju_footer_copyright_text')) {
+                ?>
+                <p>© <?= get_theme_mod('ju_footer_copyright_text') ?></p>
+
+                <?php
+            }else {
+                ?>
+                <p>© Oil in the Engine 2019</p>
+                <?php
+            }
+        
+        ?>
             <div class="right">
             <?php
 
@@ -46,15 +106,22 @@
                 }
             
             ?>
-                <p>Website by Traction</p>
+            <?php 
+                if ( get_theme_mod('ju_footer_company_website') ) {
+                    ?>
+                    <p><?= get_theme_mod('ju_footer_company_website')?></p>
+                    <?php
+                }else {
+                    ?>
+                    <p>Website by Traction</p>
+                    <?php
+                }
+            
+            ?>
             </div>
         </section>
 
     </footer>
-
-
-
-
 
     <!--Modal-->
     <div class="bg-modal menu-modal">
@@ -70,16 +137,39 @@
                         <ul class="nav-items">
                             
                         <?php
-                            if(has_nav_menu('secondary')){
-                                wp_nav_menu([
-                                    'items_wrap' => '%3$s',
-                                    // 'menu_class' => '',
-                                    'theme_location'      => 'secondary',
-                                    'container'           => false,
-                                    'fallback_cb'         => false,
-                                    'depth'               => 5,
-                                ]);
+                            $menuLocations = get_nav_menu_locations();
+                            $navbar_items = wp_get_nav_menu_items($menuLocations['secondary']);
+                            // array_pop($navbar_items);
+
+                            foreach($navbar_items as $items) {
+                            ?>
+
+                                <li>
+                                    <a href="<?= $items->url ?>">
+                                        <h2><?= $items->post_title ?></h2>
+                                    </a>
+                                </li>
+
+                            <?php
                             }
+
+
+                            $menuLocations_company = get_nav_menu_locations();
+                            $navbar_items_company = wp_get_nav_menu_items($menuLocations['company']);
+                            array_pop($navbar_items_company);
+
+                            foreach($navbar_items_company as $items_company ) {
+                                ?>
+
+                                <li>
+                                    <a href="<?= $items_company->url ?>">
+                                        <h2><?= $items_company->post_title ?></h2>
+                                    </a>
+                                </li>
+
+                                <?php
+                            }
+                            
 
                         ?>
                         </ul>
@@ -89,26 +179,26 @@
                 <div class="footer-links">
                     <ul class="links">
                     
+                        <?php 
+                            $menuLocations = get_nav_menu_locations();
+                            $navbar_items = wp_get_nav_menu_items($menuLocations['company']);
+                            
+                            ?>
+                            <li><a href="<?= end($navbar_items)->url  ?>"><?= end( $navbar_items )->post_title ?></a></li>
+                            <?php
+                        ?> 
 
-                            <?php 
-                                $menuLocations = get_nav_menu_locations();
-                                $navbar_items = wp_get_nav_menu_items($menuLocations['secondary']);
-                                
-                                ?>
-                                <li><a href="<?= end($navbar_items)->url  ?>"><?= end( $navbar_items )->post_title ?></a></li>
-                                <?php
-                            ?> 
+                        <?php 
+                            $menuLocations = get_nav_menu_locations();
+                            $navbar_items = wp_get_nav_menu_items($menuLocations['extra']);
 
-
-                            <?php 
-                                $menuLocations = get_nav_menu_locations();
-                                $navbar_items = wp_get_nav_menu_items($menuLocations['extra']);
-                                
-                                ?>
-                                <li><a href="<?= $navbar_items[0]->url  ?>"><?=  $navbar_items[0] ->post_title ?></a></li>
-                                <li><a href="<?= $navbar_items[1]->url  ?>"><?=  $navbar_items[1] ->post_title ?></a></li>
-                                <?php
-                            ?> 
+                            foreach( $navbar_items as $items ) {
+                            
+                            ?>
+                            <li><a href="<?= $items->url  ?>"><?=  $items->post_title ?></a></li>
+                            <?php
+                            }
+                        ?> 
 
                     </ul>
                 </div>
@@ -120,15 +210,6 @@
         </div>
     </div>
 
-
-                        <!-- <?php 
-                            $menuLocations = get_nav_menu_locations();
-                            $navbar_items = wp_get_nav_menu_items($menuLocations['secondary']);
-
-                            echo '<pre>';
-                            print_r(end($navbar_items));
-                            echo '</pre>';
-                        ?>  -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <?php wp_footer(); ?>
