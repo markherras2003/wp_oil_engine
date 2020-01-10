@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
     SMASC
     Scalable and Modular Architecture for Sassy CSS
@@ -7,7 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
 @font-face {
   font-family: 'butlerbold';
-  src: url("../assets/font/butler_bold-webfont.woff2") format("woff2"), url("../assets/font/butler_bold-webfont.woff") format("woff");
+  src: url("../../assets/font/butler_bold-webfont.woff2") format("woff2"), url("../../assets/font/butler_bold-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -4228,6 +4229,10 @@ html {
   background-color: #F8F8F8;
 }
 
+.bg-sun {
+  background-color: #C39900;
+}
+
 /* Shared Directory */
 select,
 input,
@@ -4467,6 +4472,7 @@ footer .footer-top .left-info .contact-info p {
 }
 
 footer .footer-top .left-info .contact-info p span {
+  margin-left: 4px;
   color: #C39900;
 }
 
@@ -4615,6 +4621,7 @@ h6 {
   padding: 0;
   font-family: 'butlerbold';
   font-weight: 700;
+  color: #353640;
 }
 
 .section-heading {
@@ -4634,6 +4641,11 @@ h2 {
 h3 {
   font-size: 32px;
   line-height: 42px;
+}
+
+h4 {
+  font-size: 26px;
+  line-height: 32px;
 }
 
 .section-heading {
@@ -4660,6 +4672,11 @@ h3 {
   font-size: 42px;
   line-height: 44px;
   margin-top: 30px;
+}
+
+.section-heading p {
+  font-weight: 400;
+  color: #353640;
 }
 
 /* 
@@ -7450,6 +7467,211 @@ p {
 
 .content.left-image .content-text {
   margin-left: 170px;
+}
+
+.download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.download .section-heading {
+  text-align: center;
+  max-width: 661px;
+  margin-bottom: 55px;
+}
+
+.cards {
+  height: 263px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 54px;
+}
+
+.cards .download-cards {
+  position: relative;
+  width: calc(100% / 3);
+  padding: 40px;
+}
+
+.cards .download-cards:nth-child(2) {
+  width: 40%;
+  border-top: 1px solid #979797;
+  border-bottom: 1px solid #979797;
+  padding: 40px 50px;
+}
+
+.cards .download-cards:nth-child(2) .card-footer {
+  padding: 0 50px;
+}
+
+.cards .download-cards:nth-child(3) {
+  border: 1px solid #979797;
+  border-right: none;
+  padding-right: 0;
+}
+
+.cards .download-cards:first-child {
+  padding-left: 0;
+  border: 1px solid #979797;
+  border-left: none;
+}
+
+.cards .download-cards .card-footer {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  padding: 0 40px;
+}
+
+.cards .download-cards .card-footer .card-button {
+  display: block;
+  color: #C39900;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.cards .download-cards .card-footer .download-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cards .download-cards .card-footer .download-btn p {
+  color: #A9A9A9;
+  font-weight: 700;
+}
+
+.cards .download-cards .card-footer .download-btn a img {
+  margin-left: 25px;
+  width: 17.39px;
+  height: 20px;
+}
+
+.cards .download-cards.first .card-footer {
+  padding-left: 0;
+}
+
+.cards .download-cards:hover, .cards .download-cards:focus {
+  background-color: #F8F8F8;
+  cursor: pointer;
+}
+
+.testimonial {
+  width: 100%;
+  background-color: rgba(195, 153, 0, 0.15);
+  position: relative;
+  margin: 0 auto;
+  height: 452px;
+}
+
+.testimonial .right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.testimonial .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.testi-content {
+  width: 830px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.testi-content .swiper-wrapper {
+  margin-top: 40px;
+}
+
+.testi-content .swiper-wrapper .swiper-slide .testi h3 {
+  margin-bottom: 24px;
+}
+
+.testi-content .swiper-wrapper .swiper-slide .testi h3::before {
+  content: '“';
+  font-size: 32px;
+  font-family: 'butlerbold';
+}
+
+.testi-content .swiper-wrapper .swiper-slide .testi h3::after {
+  content: '”';
+  font-size: 32px;
+  font-family: 'butlerbold';
+}
+
+.testi-content .swiper-wrapper .swiper-slide .testi span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #353640;
+  font-size: 18px;
+}
+
+.testi-content .swiper-wrapper .swiper-slide .testi span.name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.testi-content .swiper-pagination {
+  top: 0;
+}
+
+.testi-content .swiper-pagination .swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+  opacity: 0.3;
+  background-color: #353640;
+}
+
+.testi-content .swiper-pagination .swiper-pagination-bullet:active, .testi-content .swiper-pagination .swiper-pagination-bullet.active {
+  opacity: 1;
+}
+
+.testi-content .swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 /* Custom Directory */

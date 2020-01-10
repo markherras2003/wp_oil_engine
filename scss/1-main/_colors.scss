@@ -8,7 +8,7 @@ $colors: (
     white: #FFFFFF,
     silver: #A9A9A9,
     gray: #F8F8F8,
-    dark: #353640
+    dark: #353640 
 );
 
 /* -- Functions -- */
@@ -35,4 +35,8 @@ $colors: (
 
 .bg-gray{
     background-color: getColor(gray);
+}
+
+.bg-sun{
+    background-color: getColor(sun);
 }

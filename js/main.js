@@ -36,6 +36,22 @@ $(document).ready(function() {
 
 
 
+  //swiper
+
+  var swiper = new Swiper('.swiper-container', {
+    
+    autoplay: {
+      delay: 2500,
+      speed:800,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+  });
+
 });
   
   
