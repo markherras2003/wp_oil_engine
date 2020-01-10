@@ -1,0 +1,63 @@
+/* 
+    Set default global styles for heading elements:
+    h1, h2, h3, h4, h5, h6
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'butlerbold';
+    font-weight: 700;
+}
+
+
+.section-heading {
+    margin-bottom: $size-4;
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 72px;
+    
+}
+
+
+h2 {
+    font-size: 42px;
+    line-height: 44px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 42px;
+}
+
+
+.section-heading {
+    margin-bottom: 0;
+
+    .overline-text {
+        display: inline-block;
+        color: getColor(sun);
+        height: 33px;
+        width: max-content;
+        background-color: rgba(194, 152, 0, 0.2);
+        padding: 6px 18px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        font-family: 'Karla', sans-serif;
+    }
+
+    h2 {
+        font-size: 42px;
+        line-height: 44px;
+        margin-top: 30px;
+    }
+}

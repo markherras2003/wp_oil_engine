@@ -1,0 +1,16 @@
+/* 
+    Set container properties:
+    e.g. .container, .main-container
+*/
+
+.container {
+    max-width: 1288px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    &.--section-padding {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}

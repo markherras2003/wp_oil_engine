@@ -1,0 +1,38 @@
+/* -- Variables / Definition -- */
+$colors: (
+    Gold: #D8B849,
+    lemon: #E7D77C,
+    lemon-light: #F6F0D8,
+    sun:#C39900,
+
+    white: #FFFFFF,
+    silver: #A9A9A9,
+    gray: #F8F8F8,
+    dark: #353640
+);
+
+/* -- Functions -- */
+@function getColor($name) {
+    @return map-get($colors, $name);
+}
+
+@function colorOpacity($color, $percentage) {
+    $opacity: $percentage / 100;
+    @return rgba( $color, $opacity );
+}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+.bg-white{
+    background-color: getColor(white);
+}
+
+.bg-gray{
+    background-color: getColor(gray);
+}
