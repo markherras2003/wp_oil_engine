@@ -36,14 +36,15 @@
         // Add Control Section
         $wp_customize->add_control( new WP_Customize_Control(
             $wp_customize,
-            'ju_hero_text_input',
+            'ju_heading_text_input',
             array(
-                'label'             =>  __('Hero Text'),
+                'label'             =>  __('Heading Text'),
                 'section'           =>  'ju_misc_heading_section',
                 'settings'          =>  'ju_header_heading_text',
                 'type'              =>  'textarea',
             )
         ));
+
 
         // Add Control Section
         $wp_customize->add_control( new WP_Customize_Control(

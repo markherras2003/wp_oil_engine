@@ -29,7 +29,7 @@
                 }
 
                 &::before {
-                    content: url('../assets/Bullet\ point\ cog.svg');
+                    content: url('../../img/cog.svg');
                     width: 21px;
                     height: 21px;
                     margin-right: 20px;
@@ -42,7 +42,7 @@
         width: 50%;
         display: flex;
         justify-content: center;
-        background-image: url('../assets/Image\ Cog.png');
+        background-image: url('../../img/cog-.png');
         height: 656px;
         width: 595px;
         background-repeat: no-repeat;

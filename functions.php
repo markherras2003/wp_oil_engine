@@ -13,7 +13,7 @@ include( get_theme_file_path('/includes/customizer/enqueue.php')); // Theme Cust
 add_action('after_setup_theme', 'ju_setup_theme'); // Menu
 add_action('wp_enqueue_scripts', 'ju_enqueue'); // JS Scripts
 add_action('customize_register', 'ju_customize_register'); // Social
-add_action('customize_preview_init', 'ju_customize_preview_init'); // Social
+// add_action('customize_preview_init', 'ju_customize_preview_init'); // Social
 
 define('ALLOW_UNFILTERED_UPLOADS', true);
 

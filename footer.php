@@ -94,30 +94,32 @@
         
         ?>
             <div class="right">
-            <?php
+                <ul>
+                <?php
 
-                if(has_nav_menu('extra')){
-                    wp_nav_menu([
-                        'theme_location'      => 'extra',
-                        'container'           => false,
-                        'fallback_cb'         => false,
-                        'depth'               => 4,
-                    ]);
-                }
-            
-            ?>
-            <?php 
-                if ( get_theme_mod('ju_footer_company_website') ) {
-                    ?>
-                    <p><?= get_theme_mod('ju_footer_company_website')?></p>
-                    <?php
-                }else {
-                    ?>
-                    <p>Website by Traction</p>
-                    <?php
-                }
-            
-            ?>
+                    if(has_nav_menu('extra')){
+                        wp_nav_menu([
+                            'items_wrap'          => '%3$s',
+                            'theme_location'      => 'extra',
+                            'container'           => false,
+                            'fallback_cb'         => false,
+                            'depth'               => 4,
+                        ]);
+                    }
+                
+                ?>
+                <?php 
+                    if ( get_theme_mod('ju_footer_company_website') ) {
+                        ?>
+                        <li><?= get_theme_mod('ju_footer_company_website')?></li>
+                        <?php
+                    }else {
+                        ?>
+                        <li>Website by Traction</li>
+                        <?php
+                    }
+                ?>
+                </ul>
             </div>
         </section>
 
@@ -193,9 +195,8 @@
                             $navbar_items = wp_get_nav_menu_items($menuLocations['extra']);
 
                             foreach( $navbar_items as $items ) {
-                            
                             ?>
-                            <li><a href="<?= $items->url  ?>"><?=  $items->post_title ?></a></li>
+                            <li><a href="<?= $items->url?>"><?=  $items->post_title ?></a></li>
                             <?php
                             }
                         ?> 

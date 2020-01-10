@@ -3228,7 +3228,7 @@ p {
 }
 
 .content .content-text .clog li::before {
-  content: url("../../assets/Bullet point cog.svg");
+  content: url("../../img/cog.svg");
   width: 21px;
   height: 21px;
   margin-right: 20px;
@@ -3242,7 +3242,7 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url("../../assets/Image Cog.png");
+  background-image: url("../../img/cog-.png");
   height: 656px;
   width: 595px;
   background-repeat: no-repeat;
@@ -3398,6 +3398,7 @@ p {
 
 .testi-content {
   width: 830px;
+  margin-left: 0px !important;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
